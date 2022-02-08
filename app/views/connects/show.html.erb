@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @connect.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @connect.email %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @connect.content %>
+</p>
+
+<% if @connect[:imagetext] != nil %>
+  <p>
+    <strong>Image:</strong>
+    <%= image_tag @connect.imagetext.url %>
+  </p>
+<% end %>
+
+<%= link_to 'Edit', edit_connect_path(@connect) %> |
+<%= link_to 'Back', connects_path %>

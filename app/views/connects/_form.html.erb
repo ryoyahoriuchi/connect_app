@@ -1,0 +1,39 @@
+<%= form_with(model: connect, local: true, url:choose_new_or_edit) do |form| %>
+  <% if connect.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(connect.errors.count, "error") %> prohibited this connect from being saved:</h2>
+
+      <ul>
+        <% connect.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_area :email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :content %>
+    <%= form.text_area :content %>
+  </div>
+
+  <div class="field">
+    <%= form.label :image %>
+    <%= image_tag(@connect.imagetext.url) if @connect.imagetext && @connect.imagetext.url %>
+    <%= form.file_field :imagetext %>
+    <%= form.hidden_field :imagetext_cache %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
