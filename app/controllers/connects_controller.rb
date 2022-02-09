@@ -20,7 +20,7 @@ class ConnectsController < ApplicationController
   end
 
   def confirm
-    @connect = Connect.new(connect_params)
+    @connect = current_user.connects.build(connect_params)
     render :new if @connect.invalid?
   end
 
@@ -30,7 +30,7 @@ class ConnectsController < ApplicationController
 
   # POST /connects or /connects.json
   def create
-    @connect = Connect.new(connect_params)
+    @connect = current_user.connects.build(connect_params)
     if params[:back]
       render :new
     else

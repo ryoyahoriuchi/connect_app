@@ -25,6 +25,7 @@
         <td><%= link_to 'Show', connect %></td>
         <td><%= link_to 'Edit', edit_connect_path(connect) %></td>
         <td><%= link_to 'Destroy', connect, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= connect.user.name %></td>
       </tr>
     <% end %>
   </tbody>
