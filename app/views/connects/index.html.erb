@@ -16,8 +16,8 @@
   <tbody>
     <% @connects.each do |connect| %>
       <tr>
-        <td><%= connect.name %></td>
-        <td><%= connect.email %></td>
+        <td><%= connect.user.name %></td>
+        <td><%= connect.user.email %></td>
         <td><%= connect.content %></td>
         <% if connect[:imagetext] != nil %>
           <td><%= image_tag connect.imagetext.url %></td>
@@ -25,7 +25,6 @@
         <td><%= link_to 'Show', connect %></td>
         <td><%= link_to 'Edit', edit_connect_path(connect) %></td>
         <td><%= link_to 'Destroy', connect, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <td><%= connect.user.name %></td>
       </tr>
     <% end %>
   </tbody>

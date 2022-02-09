@@ -77,6 +77,6 @@ class ConnectsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def connect_params
-      params.require(:connect).permit(:name, :email, :content, :imagetext, :imagetext_cache)
+      params.require(:connect).permit(:content, :imagetext, :imagetext_cache)
     end
 end
