@@ -26,6 +26,9 @@ class ConnectsController < ApplicationController
 
   # GET /connects/1/edit
   def edit
+    if @connect.user_id != current_user.id
+      redirect_to connects_path
+    end
   end
 
   # POST /connects or /connects.json
@@ -61,6 +64,9 @@ class ConnectsController < ApplicationController
 
   # DELETE /connects/1 or /connects/1.json
   def destroy
+    if @connect.user_id != current_user.id
+      redirect_to connects_path
+    end
     @connect.destroy
 
     respond_to do |format|
