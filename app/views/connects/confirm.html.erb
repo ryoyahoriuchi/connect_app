@@ -1,16 +1,19 @@
 <h1>確認画面</h1>
-<%= form_with(model: @connect, url: connects_path, local: true) do |form|%>
-	<%= form.hidden_field :content %>
-	<p>内容：<%= @connect.content %></p>
+	<%= form_with(model: @connect, url: connects_path, local: true) do |form|%>
+    <div class="form">
+      <%= form.hidden_field :content %>
+      <p>内容：<%= @connect.content %></p>
 
-	<%= image_tag(@connect.imagetext.url) if @connect.imagetext && @connect.imagetext.url %>
-	<%= form.hidden_field :imagetext_cache %>
-	<%= form.submit "投稿する" %>
-<% end %>
+      <%= image_tag(@connect.imagetext.url) if @connect.imagetext && @connect.imagetext.url %>
+      <%= form.hidden_field :imagetext_cache %>
+      <br>
+      <%= form.submit "投稿する" %>
+    </div>
+	<% end %>
 
-<%= form_with(model:@connect, url:new_connect_path, local:true, method:"get") do |form| %>
-	<%= form.hidden_field :content %>
-	
-	<%= form.hidden_field :imagetext_cache %>
-	<%= form.submit "戻る", name: "back" %>
-<% end %>
+	<%= form_with(model:@connect, url:new_connect_path, local:true, method:"get") do |form| %>
+		<%= form.hidden_field :content %>
+		
+		<%= form.hidden_field :imagetext_cache %>
+		<%= form.submit "戻る", name: "back" %>
+	<% end %>

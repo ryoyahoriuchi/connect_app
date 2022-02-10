@@ -12,17 +12,27 @@
     </div>
   <% end %>
 
-  <%= form.label :name %>
-  <%= form.text_field :name %>
-
-  <%= form.label :email %>
-  <%= form.text_field :email %>
-
-  <%= form.label :password %>
-  <%= form.password_field :password %>
-
-  <%= form.label :password_confirmation %>
-  <%= form.password_field :password_confirmation %>
-
-  <%= form.submit "Create my account" %>
+  <div class="form">
+		<table>
+			<tr>
+				<td><%= form.label :name %></td>
+				<td><%= form.text_field :name %></td>
+			</tr>
+			<tr>
+				<td><%= form.label :email %></td>
+				<td><%= form.text_field :email %></td>
+			</tr>
+			<tr>
+				<td><%= form.label :password %></td>
+				<td><%= form.password_field :password %></td>
+			</tr>
+			<tr>
+				<td><%= form.label :password_confirmation %></td>
+				<td><%= form.password_field :password_confirmation %></td>
+			</tr>
+			<tr>
+				<td colspan="2"><%= form.submit "Create my account" %></td>
+			</tr>
+		</table>
+  </div>
 <% end %>

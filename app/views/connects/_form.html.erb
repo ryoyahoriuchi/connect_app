@@ -2,7 +2,6 @@
   <% if connect.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(connect.errors.count, "error") %> prohibited this connect from being saved:</h2>
-
       <ul>
         <% connect.errors.full_messages.each do |message| %>
           <li><%= message %></li>
@@ -11,19 +10,21 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :content %>
-    <%= form.text_area :content %>
-  </div>
+  <div class="form">
+    <div class="field">
+      <%= form.label :content %>
+      <%= form.text_area :content %>
+    </div>
 
-  <div class="field">
-    <%= form.label :image %>
-    <%= image_tag(@connect.imagetext.url) if @connect.imagetext && @connect.imagetext.url %>
-    <%= form.file_field :imagetext %>
-    <%= form.hidden_field :imagetext_cache %>
-  </div>
+    <div class="field">
+      <%= form.label :image %>
+      <%= image_tag(@connect.imagetext.url) if @connect.imagetext && @connect.imagetext.url %>
+      <%= form.file_field :imagetext %>
+      <%= form.hidden_field :imagetext_cache %>
+    </div>
 
-  <div class="actions">
-    <%= form.submit %>
+    <div class="actions">
+      <%= form.submit %>
+    </div>
   </div>
 <% end %>

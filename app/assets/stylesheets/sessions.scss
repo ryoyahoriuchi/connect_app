@@ -1,3 +1,30 @@
-// Place all the styles related to the sessions controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.form {
+    border-collapse: separate;
+    background-color: white;
+    padding: 10px;
+    max-width: 500px;
+    border: solid gray;
+    border-radius: 15px;
+  }
+
+form {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+div.form {
+    width: 500px;
+    margin: 10px;
+    padding: 10px;
+}
+
+label {
+    display: flex;
+    text-align: left;
+}
+
+input {
+    padding: 10px;
+}

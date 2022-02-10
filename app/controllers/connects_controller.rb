@@ -71,12 +71,12 @@ class ConnectsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_connect
-      @connect = Connect.find(params[:id])
-    end
+  def set_connect
+    @connect = Connect.find(params[:id])
+  end
 
-    # Only allow a list of trusted parameters through.
-    def connect_params
-      params.require(:connect).permit(:content, :imagetext, :imagetext_cache)
-    end
+  # Only allow a list of trusted parameters through.
+  def connect_params
+    params.require(:connect).permit(:content, :imagetext, :imagetext_cache)
+  end
 end

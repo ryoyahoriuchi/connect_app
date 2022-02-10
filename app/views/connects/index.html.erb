@@ -1,35 +1,26 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Connects</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Email</th>
-      <th>Content</th>
-      <th>Image</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @connects.each do |connect| %>
-      <tr>
-        <td><%= connect.user.name %></td>
-        <td><%= connect.user.email %></td>
-        <td><%= connect.content %></td>
-        <% if connect[:imagetext] != nil %>
-          <td><%= image_tag connect.imagetext.url %></td>
-        <% end %>
-        <td><%= link_to 'Show', connect %></td>
-        <td><%= link_to 'Edit', edit_connect_path(connect) %></td>
-        <td><%= link_to 'Destroy', connect, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
 <%= link_to 'New Connect', new_connect_path %>
+<% @connects.each do |connect| %>
+  <table class="conntents">
+    <tbody class="content">
+      <tr>
+        <th><%= connect.user.name %></th>
+        <td><%= connect.user.email %></td>
+      </tr>
+      <tr>
+        <td colspan="3"><%= connect.content %></td>
+      </tr>
+      <tr>
+        <% if connect[:imagetext] != nil %>
+          <td colspan="3"><%= image_tag connect.imagetext.url %></td>
+        <% end %>
+      </tr>
+      <tr>
+        <td colspan="3"><%= link_to 'Show', connect %>
+          <%= link_to 'Edit', edit_connect_path(connect) %>
+          <%= link_to 'Destroy', connect, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+<% end %>
+
